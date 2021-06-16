@@ -2,8 +2,9 @@ import "./App.css";
 import React, { useState } from "react";
 import { signUp, userLogin } from "./utils/index";
 
+import Search from "./Components/Drinks";
+
 const App = () => {
-  const [user, setUser] = useState();
   const [user, setUser] = useState();
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
@@ -24,7 +25,6 @@ const App = () => {
       // console.log(data);
       setData(data);
       setLoading(true);
-      setSearch();
     } catch (err) {
       console.log(err.message);
       setError(err.message);
@@ -35,6 +35,9 @@ const App = () => {
   if (!loading)
     return (
       <div className="App">
+        <div>
+          <button onClick={handleFetch}>Search for a cocktail</button>
+        </div>
         <Search drinks={data} />
       </div>
     );
