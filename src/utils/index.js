@@ -30,7 +30,7 @@ export const userLogin = async (username, email, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.username);
+  // setUser(data.username);
 };
 
 export const updateUser = async (username, email, password, setUser) => {

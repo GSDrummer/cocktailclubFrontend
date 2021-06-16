@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import React from "react";
 
+import Search from "./components/Search";
+
 const App = () => {
   return (
     <BrowserRouter>
