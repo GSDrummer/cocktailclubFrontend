@@ -23,7 +23,7 @@ export const userLogin = async (username, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data);
+  setUser(data.username);
 };
 
 export const updateUser = async (username, email, password, setUser) => {

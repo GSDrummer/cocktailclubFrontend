@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Register from "./components/Signup";
 import Profile from "./components/Profile";
 
+import Search from "./components/Search";
+
 const App = () => {
   const [user, setUser] = useState(null);
 
