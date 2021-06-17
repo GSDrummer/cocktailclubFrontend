@@ -11,13 +11,10 @@ const Search = () => {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
       );
-      console.log(response);
       if (response.status !== 200) {
         throw new Error("Failed to fetch");
       }
-
       const data = await response.json();
-      // console.log(data);
       setData(data);
       setLoading(false);
     } catch (err) {
