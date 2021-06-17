@@ -20,11 +20,11 @@ const Register = ({ user, setUser }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     signUp(username, email, password, setUser);
-
     setUsername("");
     setEmail("");
     setPassword("");
   };
+
   return (
     <div className="signup-container">
       <h1 className="signup-title">Sign up!</h1>
@@ -50,7 +50,7 @@ const Register = ({ user, setUser }) => {
             id="email"
             type="email"
             name="email"
-            placeholder="email"
+            placeholder="Email"
           />
         </div>
         <div className="password-container">

@@ -57,7 +57,7 @@ const Login = ({ user, setUser }) => {
           value="Log in"
         />
         <Link to="/signup" className="signup-link">
-          Create an Account
+          Create New Account
         </Link>
       </form>
     </div>

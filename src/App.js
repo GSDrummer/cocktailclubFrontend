@@ -1,35 +1,64 @@
 import "./App.css";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./components/Login";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import Search from "./components/Search";
 import About from "./components/About";
+import Login from "./components/Login";
 import Register from "./components/Signup";
-import React, { useState } from "react";
+import Profile from "./components/Profile";
 
 const App = () => {
   const [user, setUser] = useState(null);
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route
-            path="/login"
-            component={Login}
-            user={user}
-            setUser={setUser}
-          />
-          <Route path="/home" component={Home} user={user} setUser={setUser} />
-          <Route path="/signup" component={Register} />
-          <Route path="/cocktails" component={Search} />
-          <Route path="/about" component={About} />
-        </Switch>
-        {/* {user ? <Home /> : <Redirect to="/login" />} */}
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
+        {!user ? (
+          <Route path="/">
+            <Login user={user} setUser={setUser} />
+          </Route>
+        ) : (
+          <Redirect to="/home" />
+        )}
+        {user ? (
+          <Route path="/home">
+            <Navbar user={user} setUser={setUser} />
+            <Home user={user} setUser={setUser} />
+          </Route>
+        ) : (
+          <Redirect to="/" />
+        )}
+        {user ? (
+          <Route path="/about">
+            <Navbar user={user} setUser={setUser} />
+            <About user={user} setUser={setUser} />
+          </Route>
+        ) : (
+          <Redirect to="/" />
+        )}
+        {user ? (
+          <Route path="/cocktails">
+            <Navbar user={user} setUser={setUser} />
+            <Search user={user} setUser={setUser} />
+          </Route>
+        ) : (
+          <Redirect to="/" />
+        )}
+        {user ? (
+          <Route path="/profile">
+            <Navbar user={user} setUser={setUser} />
+            <Profile user={user} setUser={setUser} />
+          </Route>
+        ) : (
+          <Redirect to="/" />
+        )}
+        <Route path="/signup">
+          <Register user={user} setUser={setUser} component={Register} />
+        </Route>
+      </BrowserRouter>
+    </div>
   );
 };
 
