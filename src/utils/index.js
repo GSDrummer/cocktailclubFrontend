@@ -13,7 +13,7 @@ export const signUp = async (username, email, password, favourites) => {
   return data.username + console.log(`You have registered user :${username}`);
 };
 
-export const userLogin = async (username, password) => {
+export const userLogin = async (username, password, setUser) => {
   const response = await fetch("http://localhost:5000/users/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -23,7 +23,7 @@ export const userLogin = async (username, password) => {
     }),
   });
   const data = await response.json();
-  return data.username + console.log("Logged in!");
+  setUser(data);
 };
 
 export const updateUser = async (username, email, password, setUser) => {

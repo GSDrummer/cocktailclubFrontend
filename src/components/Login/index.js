@@ -1,9 +1,9 @@
 import "./main.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { userLogin } from "../../utils";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ user, setUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,10 +17,11 @@ const Login = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    userLogin(username, password);
+    userLogin(username, password, setUser);
     setUsername("");
     setPassword("");
   };
+
   return (
     <div className="login-container">
       <h1 className="login-title">Log In</h1>

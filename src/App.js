@@ -16,16 +16,18 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route
+            path="/login"
+            component={Login}
+            user={user}
+            setUser={setUser}
+          />
+          <Route path="/home" component={Home} user={user} setUser={setUser} />
           <Route path="/signup" component={Register} />
           <Route path="/cocktails" component={Search} />
           <Route path="/about" component={About} />
         </Switch>
-        {user ? (
-          <Home user={user} setUser={setUser} />
-        ) : (
-          <Redirect to="/login" />
-        )}
+        {/* {user ? <Home /> : <Redirect to="/login" />} */}
       </div>
     </BrowserRouter>
   );

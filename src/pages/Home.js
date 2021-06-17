@@ -1,10 +1,10 @@
 import React from "react";
 import Login from "../components/Login";
 
-const Home = ({ setUser }) => {
+const Home = ({ setUser, user }) => {
   return (
     <>
-      <Login setUser={setUser} />
+      <Login setUser={setUser} user={user} />
     </>
   );
 };
