@@ -1,10 +1,4 @@
-export const signUp = async (
-  username,
-  email,
-  password,
-  favourites,
-  setUser
-) => {
+export const signUp = async (username, email, password, favourites) => {
   const response = await fetch("http://localhost:5000/users/signup", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -16,21 +10,20 @@ export const signUp = async (
     }),
   });
   const data = await response.json();
-  setUser(data.username);
+  return data.username + console.log(`You have registered user :${username}`);
 };
 
-export const userLogin = async (username, email, password, setUser) => {
+export const userLogin = async (username, password) => {
   const response = await fetch("http://localhost:5000/users/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       username: username,
-      email: email,
       password: password,
     }),
   });
   const data = await response.json();
-  setUser(data.username);
+  return data.username + console.log("Logged in!");
 };
 
 export const updateUser = async (username, email, password, setUser) => {
