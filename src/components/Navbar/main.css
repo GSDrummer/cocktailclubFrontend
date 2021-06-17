@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 15vh;
+  background: #610d99;
+  color: pink;
+  text-decoration: none;
+}
+
+h3 {
+  color: pink;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  color: pink;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #e8e9f3;
+}

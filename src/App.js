@@ -1,16 +1,23 @@
 import "./App.css";
-import React, { useState } from "react";
-import { signUp, userLogin } from "./utils/index";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Search from "./components/Search";
+import React from "react";
 
 import Search from "./components/Search";
 
 const App = () => {
-  const [data, setData] = useState([]);
-
   return (
-    <div className="App">
-      <Search drinks={data} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/cocktails" component={Search} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 };
 
