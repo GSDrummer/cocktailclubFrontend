@@ -1,10 +1,10 @@
 import "./main.css";
 import React, { useState } from "react";
-import { userLogin } from "../../utils";
-import { Link } from "react-router-dom";
+import { signUp } from "../../utils";
 
-const Login = ({ user, setUser }) => {
+const Register = ({ user, setUser }) => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const onChange = (event) => {
@@ -12,20 +12,23 @@ const Login = ({ user, setUser }) => {
       setUsername(event.target.value);
     } else if (event.target.id === "password") {
       setPassword(event.target.value);
+    } else if (event.target.id === "email") {
+      setEmail(event.target.value);
     }
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    userLogin(username, password, setUser);
+    signUp(username, email, password, setUser);
     setUsername("");
+    setEmail("");
     setPassword("");
   };
 
   return (
-    <div className="login-container">
-      <h1 className="login-title">Log In</h1>
-      <form onSubmit={onSubmit} className="login-form">
+    <div className="signup-container">
+      <h1 className="signup-title">Sign up!</h1>
+      <form onSubmit={onSubmit} className="signup-form">
         <div className="username-container">
           <label htmlFor="username">Username:</label>
           <input
@@ -36,6 +39,18 @@ const Login = ({ user, setUser }) => {
             type="username"
             name="username"
             placeholder="Username"
+          />
+        </div>
+        <div className="email-container">
+          <label htmlFor="email">Email:</label>
+          <input
+            onChange={onChange}
+            value={email}
+            className="email-signin"
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Email"
           />
         </div>
         <div className="password-container">
@@ -51,17 +66,14 @@ const Login = ({ user, setUser }) => {
           />
         </div>
         <input
-          className="submit-login"
+          className="submit-signup"
           id="submit"
           type="submit"
-          value="Log in"
+          value="Sign up!"
         />
-        <Link to="/signup" className="signup-link">
-          Create New Account
-        </Link>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
