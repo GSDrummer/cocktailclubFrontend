@@ -47,22 +47,7 @@ const RecipeReviewCard = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const handleFetch = async () => {
-    try {
-      const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
-      );
-      if (response.status !== 200) {
-        throw new Error("Failed to fetch");
-      }
-      const data = await response.json();
-      setData(data);
-      setLoading(false);
-    } catch (err) {
-      console.log(err.message);
-      setError(err.message);
-    }
-  };
+  
   const handleCard = () => {
     handleFetch();
     console.log(data)

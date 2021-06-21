@@ -67,6 +67,7 @@ const Search = () => {
   const handleSubmit = (e) => {
     handleFetch();
     e.preventDefault();
+    console.log(data)
 
   };
   const handleExpandClick = () => {
@@ -93,19 +94,17 @@ const Search = () => {
         <div>
           <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-          </Avatar>
-        }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title={data.drink[0].strDrink}
+        title={data.drinks[0].strDrink}
       />
       <CardMedia
-        image={data.drink[0].strDrinkThumb}
+        className={classes.media}
+        image={data.drinks[0].strDrinkThumb}
+        title={data.drinks[0].strDrink}
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
