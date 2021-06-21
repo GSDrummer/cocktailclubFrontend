@@ -10,7 +10,7 @@ import Register from "./components/Signup";
 import Profile from "./components/Profile";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
 
   return (
     <div className="App">
