@@ -14,6 +14,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import LocalBarIcon from '@material-ui/icons/LocalBar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RecipeReviewCard = () => {
+const DrinkCard = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [data, setData] = useState({});
@@ -59,12 +60,13 @@ const RecipeReviewCard = () => {
     } catch (err) {
       console.log(err.message);
       setError(err.message);
+      
     }
   };
 
   
   const handleCard = () => {
-    handleFetch();
+      handleFetch();
     console.log(data)
   }
 
@@ -75,10 +77,13 @@ const RecipeReviewCard = () => {
   if (error) return <h1>{error}</h1>; 
   return (
       <div >
-         <img onClick={handleCard}></img>
+        <button onclick={handleCard} ><LocalBarIcon/></button>
+         
       {loading ? (
         <div></div>
       ) : (
+    <div>
+      
     <Card className={classes.root}>
       <CardHeader
         action={
@@ -130,7 +135,7 @@ const RecipeReviewCard = () => {
         </CardContent>
       </Collapse>
     </Card>
-
+          </div>
     )}
     </div>
   );
@@ -138,4 +143,4 @@ const RecipeReviewCard = () => {
 
 
 
-export default RecipeReviewCard
+export default DrinkCard

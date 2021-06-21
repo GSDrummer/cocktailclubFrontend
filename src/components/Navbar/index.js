@@ -15,10 +15,10 @@ const Navbar = ({ user, setUser }) => {
     <nav>
       
       <ul className="nav-links">
-        <Link to="/home"><HomeIcon/></Link>
-        <Link to="/about"><InfoIcon/></Link>
-        <Link to="/cocktails"><LocalBarIcon/></Link>
-        <Link to="/profile"><PersonIcon/></Link>
+        <Link to="/home"><HomeIcon/>Home</Link>
+        <Link to="/about"><InfoIcon/>About</Link>
+        <Link to="/cocktails"><LocalBarIcon/>Search</Link>
+        <Link to="/profile"><PersonIcon/>Profile</Link>
         <button onClick={() => logout()}><ExitToAppIcon/></button>
       </ul>
     </nav>
