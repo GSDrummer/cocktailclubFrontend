@@ -4,8 +4,8 @@ import { userLogin } from "../../utils";
 import { Link } from "react-router-dom";
 
 const Login = ({ user, setUser }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   const onChange = (event) => {
     if (event.target.id === "username") {
@@ -17,9 +17,11 @@ const Login = ({ user, setUser }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    userLogin(username, password, setUser);
-    setUsername("");
-    setPassword("");
+    if (username && password) {
+      userLogin(username, password, setUser);
+      setUsername("");
+      setPassword("");
+    }
   };
 
   return (

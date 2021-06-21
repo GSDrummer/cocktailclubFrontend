@@ -1,4 +1,4 @@
-export const signUp = async (username, email, password, favourites) => {
+export const signUp = async (username, email, password, setUser) => {
   const response = await fetch("http://localhost:5000/users/signup", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -6,11 +6,10 @@ export const signUp = async (username, email, password, favourites) => {
       username: username,
       email: email,
       password: password,
-      favourites: favourites,
     }),
   });
   const data = await response.json();
-  return data.username + console.log(`You have registered user :${username}`);
+  setUser(data.savedUser);
 };
 
 export const userLogin = async (username, password, setUser) => {
@@ -23,7 +22,9 @@ export const userLogin = async (username, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data);
+  if (data.user) {
+    setUser(data.user.username);
+  }
 };
 
 export const updateUser = async (username, email, password, setUser) => {
@@ -40,5 +41,5 @@ export const updateUser = async (username, email, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.username);
+  setUser(data.user.username);
 };
