@@ -16,6 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -39,18 +40,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Search = () => {
-  const [search, setSearch] = useState("");
+const RecipeReviewCard = () => {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
   const handleFetch = async () => {
     try {
       const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
       );
       if (response.status !== 200) {
         throw new Error("Failed to fetch");
@@ -63,35 +63,25 @@ const Search = () => {
       setError(err.message);
     }
   };
-
-  const handleSubmit = (e) => {
+  const handleCard = () => {
     handleFetch();
-    e.preventDefault();
+    console.log(data)
+  }
 
-  };
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  if (error) return <h1>{error}</h1>;
+  if (error) return <h1>{error}</h1>; 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search for a Cocktail:
-          <input
-            type="text"
-            name="search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          ></input>
-        </label>
-        <button type="submit">Search</button>
-      </form>
-        {loading ? (
-          <div>...</div>
-        ) : (
-        <div>
-          <Card className={classes.root}>
+      <div>
+          <div>
+      <button onClick={handleCard}>Load Cocktail</button>
+      </div>
+      {loading ? (
+        <div></div>
+      ) : (
+    <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -105,6 +95,7 @@ const Search = () => {
         title={data.drink[0].strDrink}
       />
       <CardMedia
+        className="drink-thumb"
         image={data.drink[0].strDrinkThumb}
       />
       <CardActions disableSpacing>
@@ -144,10 +135,12 @@ const Search = () => {
         </CardContent>
       </Collapse>
     </Card>
-        </div>
-      )}
+
+    )}
     </div>
   );
 };
 
-export default Search;
+
+
+export default RecipeReviewCard
