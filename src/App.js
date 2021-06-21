@@ -58,6 +58,7 @@ const App = () => {
           <Register user={user} setUser={setUser} component={Register} />
         </Route>
       </BrowserRouter>
+
     </div>
   );
 };
