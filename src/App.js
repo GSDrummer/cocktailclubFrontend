@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Register from "./components/Signup";
 import Profile from "./components/Profile";
 
+
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -58,6 +59,8 @@ const App = () => {
           <Register user={user} setUser={setUser} component={Register} />
         </Route>
       </BrowserRouter>
+    
+      
 
     </div>
   );

@@ -7,7 +7,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -46,6 +45,22 @@ const RecipeReviewCard = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const handleFetch = async () => {
+    try {
+      const response = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/random.php`
+      );
+      if (response.status !== 200) {
+        throw new Error("Failed to fetch");
+      }
+      const data = await response.json();
+      setData(data);
+      setLoading(false);
+    } catch (err) {
+      console.log(err.message);
+      setError(err.message);
+    }
+  };
 
   
   const handleCard = () => {
@@ -59,29 +74,24 @@ const RecipeReviewCard = () => {
   };
   if (error) return <h1>{error}</h1>; 
   return (
-      <div>
-          <div>
-      <button onClick={handleCard}>Load Cocktail</button>
-      </div>
+      <div >
+         <img onClick={handleCard}></img>
       {loading ? (
         <div></div>
       ) : (
     <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-          </Avatar>
-        }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title={data.drink[0].strDrink}
+        title={data.drinks[0].strDrink}
       />
       <CardMedia
-        className="drink-thumb"
-        image={data.drink[0].strDrinkThumb}
+        className={classes.media}
+        image={data.drinks[0].strDrinkThumb}
+        title={data.drinks[0].strDrink}
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
