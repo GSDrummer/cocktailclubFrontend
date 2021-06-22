@@ -7,7 +7,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
@@ -73,7 +72,12 @@ const Search = () => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  if (error) return <h1>{error}</h1>;
+
+const totalItems = 10;
+
+const items = new Array(totalItems).fill(null);
+
+ if (error) return <h1>{error}</h1>;
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -88,11 +92,12 @@ const Search = () => {
         </label>
         <button type="submit">Search</button>
       </form>
+
         {loading ? (
           <div>...</div>
         ) : (
         <div>
-          <Card className={classes.root}>
+          {items.map((_, idx) => <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -142,7 +147,8 @@ const Search = () => {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>
+    </Card>)}
+          
         </div>
       )}
     </div>

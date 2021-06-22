@@ -1,15 +1,19 @@
 nav {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items:center;
   min-height: 15vh;
   background: #141214;
-  color: pink;
+  color: rgb(248, 246, 246);
   text-decoration: none;
+}
+.head-image {
+  display:flex;
+
 }
 
 h3 {
-  color: pink;
+  color: rgb(247, 244, 245);
 }
 
 .nav-links {
@@ -18,7 +22,7 @@ h3 {
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  color: pink;
+  color: rgb(248, 248, 248);
   text-decoration: none;
 }
 
