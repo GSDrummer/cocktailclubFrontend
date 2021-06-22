@@ -74,6 +74,11 @@ const DrinkCard = () => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const totalItems = 10;
+
+  const items = new Array(totalItems).fill(null);
+
+  
   if (error) return <h1>{error}</h1>; 
   return (
       <div >
@@ -82,9 +87,8 @@ const DrinkCard = () => {
       {loading ? (
         <div></div>
       ) : (
-    <div>
-      
-    <Card className={classes.root}>
+        <div>
+        {items.map((_, idx) => <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -134,8 +138,8 @@ const DrinkCard = () => {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>
-          </div>
+    </Card>)}</div>
+    
     )}
     </div>
   );

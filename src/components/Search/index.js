@@ -72,7 +72,12 @@ const Search = () => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  if (error) return <h1>{error}</h1>;
+
+const totalItems = 10;
+
+const items = new Array(totalItems).fill(null);
+
+ if (error) return <h1>{error}</h1>;
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -92,7 +97,7 @@ const Search = () => {
           <div>...</div>
         ) : (
         <div>
-          <Card className={classes.root}>
+          {items.map((_, idx) => <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -142,7 +147,8 @@ const Search = () => {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>
+    </Card>)}
+          
         </div>
       )}
     </div>
