@@ -1,3 +1,5 @@
+
+import { Link } from "react-router-dom";
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -14,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import "../Search/main.css"
+import LocalBarIcon from '@material-ui/icons/LocalBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,78 +41,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Search = () => {
-  const [search, setSearch] = useState("");
-  const [data, setData] = useState({});
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
+const Cocktail =({ image, name, id, info, glass, recipe }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const handleFetch = async () => {
-    try {
-      const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
-      );
-      if (response.status !== 200) {
-        throw new Error("Failed to fetch");
-      }
-      const data = await response.json();
-      setData(data);
-      setLoading(false);
-    } catch (err) {
-      console.log(err.message);
-      setError(err.message);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    handleFetch();
-    e.preventDefault();
-    console.log(data)
-
-  };
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-// const drinkArr = [data.drinks]
-
-// const listDrinks = drinkArr.map(data => data.drinks);
-
-  
- if (error) return <h1>{error}</h1>;
   return (
-    <div className="search-container">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search for a Cocktail:
-          <input
-            type="text"
-            name="search"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          ></input>
-        </label>
-        <button type="submit">Search</button>
-      </form>
-
-        {loading ? (
-          <div>...</div>
-        ) : (
-        <div>
-          <Card className={classes.root}>
+    <article className="cocktail">
+      <div className="img-container">
+      
+    <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title={data.drinks[0].strDrink}
+        title={name}
       />
       <CardMedia
         className={classes.media}
-        image={data.drinks[0].strDrinkThumb}
-        title={data.drinks[0].strDrink}
+        image={image}
+        title={name}
       />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
@@ -133,26 +89,22 @@ const Search = () => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-             {data.drinks[0].strIngredient1},
-            {data.drinks[0].strIngredient2},{data.drinks[0].strIngredient3},
-            {data.drinks[0].strIngredient4}
+             {recipe}
           </Typography>
           <Typography paragraph>
-            {data.drinks[0].strInstructions}
+            {info}
           </Typography>
           <Typography paragraph>
-            {data.drinks[0].strGlass}
-          </Typography>
-          <Typography>
-           {data.drinks[0].strIBA}
+            {glass}
           </Typography>
         </CardContent>
       </Collapse>
-      </Card>
-        </div>
-      )}
+    </Card>
     </div>
+  )
+    
+    </article>
   );
-};
+}
 
-export default Search;
+export default Cocktail

@@ -1,17 +1,68 @@
-import React from "react";
-import DrinkCard from "../components/Drink-Card/index";
+import React, {useEffect} from "react";
+import CocktailList from "../components/CocktailList";
+import "../pages/main.css"
 
 
 const Home = ({ setUser }) => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <div>
-      <DrinkCard/>
-      </div>
-     
-    </div>
-  );
-};
+    //Setting states in functional components
+  
+    //Loading state
+    const [loading, setLoading] = React.useState(false);
+  
+    //Search state
+    const [searchTerm, setSearchTerm] = React.useState("a");
+  
+    //Cocktails state
+    const [cocktails, setCocktails] = React.useState([]);
+  
+    //Using empty array[] as second array make to run useEffect ony ones when component mounts
+    useEffect(() => {
+      setLoading(true);
+      async function getDrinks() {
+        try {
+          const response = await fetch(
+            `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+          );
+          const data = await response.json();
+          const { drinks } = data;
+          if (drinks) {
+            const newCocktails = drinks.map((item) => {
+              const {
+                idDrink,
+                strDrink,
+                strDrinkThumb,
+                strInstructions,
+                strIngredient1,
+                strIngredient2, 
+                strIngredient3, 
+                strIngredient4,
+                strGlass,
+              } = item;
+              return {
+                id: idDrink,
+                name: strDrink,
+                image: strDrinkThumb,
+                info: strInstructions,
+                glass: strGlass,
+                recipe: [strIngredient1,strIngredient2, strIngredient3, strIngredient4]
+              };
+            });
+            setCocktails(newCocktails);
+          } else {
+            setCocktails([]);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+        setLoading(false);
+      }
+      getDrinks();
+    }, [searchTerm]);
+    return (
+      <main>
+        <CocktailList loading={loading} cocktails={cocktails} />
+      </main>
+    );
+  }
 
 export default Home;
