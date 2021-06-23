@@ -58,7 +58,6 @@ const Cocktail =({ image, name, id, info, glass, recipe }) => {
       <CardHeader
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
           </IconButton>
         }
         title={name}
@@ -71,9 +70,6 @@ const Cocktail =({ image, name, id, info, glass, recipe }) => {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
@@ -101,7 +97,6 @@ const Cocktail =({ image, name, id, info, glass, recipe }) => {
       </Collapse>
     </Card>
     </div>
-  )
     
     </article>
   );

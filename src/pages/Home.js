@@ -59,7 +59,7 @@ const Home = ({ setUser }) => {
       getDrinks();
     }, [searchTerm]);
     return (
-      <main>
+      <main className="home-container">
         <CocktailList loading={loading} cocktails={cocktails} />
       </main>
     );
