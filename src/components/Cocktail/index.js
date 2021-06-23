@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { addFavourite } from "../../utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,10 +40,17 @@ const useStyles = makeStyles((theme) => ({
 const Cocktail = ({ image, name, id, info, glass, recipe }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+  const [favourites, setFavourites] = useState([]);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleFavourites = (e) => {
+    e.preventDefault();
+    addFavourite(username, favourites, setUser);
+  };
+
   return (
     <article className="cocktail">
       <div className="img-container">
@@ -54,7 +62,7 @@ const Cocktail = ({ image, name, id, info, glass, recipe }) => {
           <CardMedia className={classes.media} image={image} title={name} />
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+              <FavoriteIcon onClick={handleFavourites} />
             </IconButton>
             <IconButton
               className={clsx(classes.expand, {

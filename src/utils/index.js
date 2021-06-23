@@ -42,3 +42,18 @@ export const updateUser = async (username, email, password, setUser) => {
   const data = await response.json();
   setUser(data.username);
 };
+
+export const addFavourite = async (username, favourites, setUser) => {
+  const response = await fetch("http://localhost:5000/users", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: username,
+      update: {
+        favourites: favourites,
+      },
+    }),
+  });
+  const data = await response.json();
+  setUser(data.user.username);
+};

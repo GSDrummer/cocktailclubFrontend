@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CocktailList from "../components/CocktailList";
 import "../pages/main.css";
 
-const Home = ({ setUser }) => {
-  const [loading, setLoading] = React.useState(false);
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [cocktails, setCocktails] = React.useState([]);
+const Home = ({ user, setUser }) => {
+  const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-    async function getDrinks() {
+    async function getDrink() {
       try {
         const response = await fetch(
           `www.thecocktaildb.com/api/json/v1/1/random.php`
@@ -53,11 +53,7 @@ const Home = ({ setUser }) => {
       setLoading(false);
     }
     getDrinks();
-  }, [searchTerm]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  }, []);
 
   return <CocktailList loading={loading} cocktails={cocktails} />;
 };
