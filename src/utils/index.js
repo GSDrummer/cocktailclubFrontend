@@ -23,7 +23,7 @@ export const userLogin = async (username, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data);
+  setUser(data.user.username);
 };
 
 export const updateUser = async (username, email, password, setUser) => {
@@ -40,7 +40,7 @@ export const updateUser = async (username, email, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.username);
+  setUser(data.user.username);
 };
 
 export const addFavourite = async (username, favourites, setUser) => {
@@ -55,5 +55,5 @@ export const addFavourite = async (username, favourites, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.user.username);
+  setUser(data.user);
 };

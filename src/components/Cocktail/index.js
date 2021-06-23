@@ -37,10 +37,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Cocktail = ({ image, name, id, info, glass, recipe }) => {
+const Cocktail = ({ user, setUser, image, name, id, info, glass, recipe }) => {
+  const username = user.username;
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState([
+    { image, name, id, info, glass, recipe },
+  ]);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);

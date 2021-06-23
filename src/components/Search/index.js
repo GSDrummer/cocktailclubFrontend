@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CocktailList from "../CocktailList";
 import "./main.css";
 
@@ -6,13 +6,13 @@ const Search = ({ user, setUser }) => {
   //Setting states in functional components
 
   //Loading state
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
 
   //Search state
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   //Cocktails state
-  const [cocktails, setCocktails] = React.useState([]);
+  const [cocktails, setCocktails] = useState([]);
 
   //Using empty array[] as second array make to run useEffect ony ones when component mounts
   useEffect(() => {
@@ -38,6 +38,8 @@ const Search = ({ user, setUser }) => {
               strGlass,
             } = item;
             return {
+              user,
+              setUser,
               id: idDrink,
               name: strDrink,
               image: strDrinkThumb,

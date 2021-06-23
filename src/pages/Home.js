@@ -9,7 +9,7 @@ const Home = ({ user, setUser }) => {
 
   useEffect(() => {
     setLoading(true);
-    async function getDrink() {
+    async function getDrinks() {
       try {
         const response = await fetch(
           `www.thecocktaildb.com/api/json/v1/1/random.php`
@@ -55,7 +55,7 @@ const Home = ({ user, setUser }) => {
     getDrinks();
   }, []);
 
-  return <CocktailList loading={loading} cocktails={cocktails} />;
+  return <CocktailList cocktails={cocktails} />;
 };
 
 export default Home;

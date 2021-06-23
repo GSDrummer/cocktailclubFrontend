@@ -8,6 +8,7 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Signup";
 import Profile from "./components/Profile";
+import Cocktail from "./components/Cocktail";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/cocktails">
             <Navbar user={user} setUser={setUser} />
             <Search user={user} setUser={setUser} />
+            <Cocktail user={user} setUser={setUser} />
           </Route>
         ) : (
           <Redirect to="/" />
