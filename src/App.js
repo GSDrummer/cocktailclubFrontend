@@ -8,8 +8,6 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Signup";
 import Profile from "./components/Profile";
-import RecipeReviewCard from "./components/Drink-Card";
-
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -60,10 +58,6 @@ const App = () => {
           <Register user={user} setUser={setUser} component={Register} />
         </Route>
       </BrowserRouter>
-      
-    
-      
-
     </div>
   );
 };
