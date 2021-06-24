@@ -64,7 +64,7 @@ const DrinkCard = () => {
     }
   };
 
-  
+
   const handleCard = () => {
       handleFetch();
     console.log(data)
@@ -74,12 +74,9 @@ const DrinkCard = () => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const totalItems = 10;
-
-  const items = new Array(totalItems).fill(null);
-
   
   if (error) return <h1>{error}</h1>; 
+  
   return (
       <div >
         <button onclick={handleCard} ><LocalBarIcon/></button>
@@ -87,8 +84,8 @@ const DrinkCard = () => {
       {loading ? (
         <div></div>
       ) : (
-        <div>
-        {items.map((_, idx) => <Card className={classes.root}>
+      
+    <Card className={classes.root}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -138,8 +135,7 @@ const DrinkCard = () => {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>)}</div>
-    
+    </Card>
     )}
     </div>
   );
