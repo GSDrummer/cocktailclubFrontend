@@ -62,7 +62,7 @@ const Search = ({ user, setUser }) => {
   };
 
   return (
-    <main className="home-container">
+    <main className="search-container">
       <form onSubmit={handleSubmit}>
         <label>
           Search for a Cocktail:

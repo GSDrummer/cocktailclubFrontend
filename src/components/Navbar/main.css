@@ -6,9 +6,10 @@
   align-items:center;
   align-content: center;
   color: rgb(255, 255, 255);
-  min-height: 50vh;
+  min-height: 80vh;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 nav {
@@ -17,6 +18,10 @@ nav {
   min-width: max-content;
   background:none;
   text-decoration: none;
+}
+
+.sub-head {
+  margin-top: 17vh;
 }
 .home-header {
   background:none;

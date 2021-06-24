@@ -60,10 +60,10 @@ const Home = ({ user, setUser }) => {
   }, []);
 
   return (
-    <div><CocktailList loading={loading} cocktails={cocktails} />
-    <footer className="footer">&copy;2020
-                  <p>Josh Howcroft, Luke Ellwood</p>
-        </footer>     
+
+    <div>
+      <h2>Discover new Cocktails</h2>
+      <CocktailList loading={loading} cocktails={cocktails} />   
   </div>)
     
   };

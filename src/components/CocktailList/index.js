@@ -13,6 +13,7 @@ export default function CocktailList({ cocktails, loading }) {
     );
   }
   return (
+    <div>
     <section className="section">
       <div className="cocktails-center">
         {cocktails.map((item) => {
@@ -20,5 +21,9 @@ export default function CocktailList({ cocktails, loading }) {
         })}
       </div>
     </section>
+    <footer className="footer">&copy;2020
+    <p>Josh Howcroft, Luke Ellwood</p>
+</footer>
+</div>
   );
 }
