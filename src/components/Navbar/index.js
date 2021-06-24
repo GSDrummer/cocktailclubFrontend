@@ -18,15 +18,15 @@ const Navbar = ({ user, setUser }) => {
     </div>
     <nav>
       <ul className="nav-links">
-        <Link to="/home">
+        <Link className='home-link' to="/home">
           <HomeIcon />
           Home
         </Link>
-        <Link to="/about">
+        <Link className='about-link' to="/about">
           <InfoIcon />
           About
         </Link>
-        <Link to="/cocktails">
+        <Link className='search-link' to="/cocktails">
           <LocalBarIcon />
           Search
         </Link>

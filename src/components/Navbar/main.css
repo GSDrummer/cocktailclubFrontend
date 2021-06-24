@@ -51,6 +51,37 @@ h3 {
   border: none;
   text-decoration: none;
 }
+.search-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-decoration: none;
+}
+.home-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-decoration: none;
+}
+
+.about-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-decoration: none;
+}
 
 .exit-button {
   background: none;
