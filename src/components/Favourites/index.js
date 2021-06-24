@@ -46,6 +46,7 @@ const Favourites = ({ user, setUser }) => {
 
   return (
     <article className="cocktail">
+      <h1>{user.username} Here are your favourite Cocktails!</h1>
       <div className="img-container">
         <Card className={classes.root}>
           <CardHeader

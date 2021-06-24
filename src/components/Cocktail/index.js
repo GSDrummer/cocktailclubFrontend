@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Cocktail = ({ user, setUser, image, name, id, info, glass, recipe }) => {
-  const username = user.username;
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [favourites, setFavourites] = useState([
@@ -50,9 +49,8 @@ const Cocktail = ({ user, setUser, image, name, id, info, glass, recipe }) => {
   };
 
   const handleFavourites = (e) => {
-    console.log(username);
     e.preventDefault();
-    addFavourite(username, favourites, setUser);
+    addFavourite(user, favourites, setUser);
   };
 
   return (
