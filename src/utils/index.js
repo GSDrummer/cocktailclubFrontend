@@ -9,7 +9,7 @@ export const signUp = async (username, email, password, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.user);
+  setUser(data.savedUser);
 };
 
 export const userLogin = async (username, password, setUser) => {
@@ -55,4 +55,3 @@ export const addFavourite = async (username, favourites, setUser) => {
   });
   const data = await response.json();
   setUser(data.user);
-};
