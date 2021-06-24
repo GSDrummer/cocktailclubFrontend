@@ -16,7 +16,8 @@ import { addFavourite } from "../../utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 1000,
+    margin: '5vw'
   },
   media: {
     height: 0,

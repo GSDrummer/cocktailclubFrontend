@@ -54,4 +54,5 @@ export const addFavourite = async (username, favourites, setUser) => {
     }),
   });
   const data = await response.json();
-  setUser(data.user);
+  setUser(data.user)
+};

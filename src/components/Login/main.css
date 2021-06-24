@@ -1,0 +1,39 @@
+.login-container {
+    background-color: #141414;
+    background-image: url(https://images.unsplash.com/photo-1597241693839-07d7fb803af1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80);
+    min-height: 100vh;
+    min-width: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: left;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.user-text{
+    font-weight: 400;
+}
+
+.login-form {
+    background: none;
+    border: none;
+    margin: 2vh;
+    color: white;
+    border-radius: 20px;
+    text-align: start;
+    padding: 2vw;
+}
+.username-signin {
+    margin: 2vh;
+}
+.password-signin {
+    margin: 2vh;
+}
+
+.submit-login {
+    background-color: #141414;
+    color: white;
+    background: none;
+    border-radius: 20px;
+    margin:2vw;
+    padding: 1%;
+}

@@ -12,6 +12,10 @@ const Navbar = ({ user, setUser }) => {
   };
 
   return (
+    <div className='nav-container'>
+    <div className='home-header'>
+      <h1>Cocktail Club</h1>
+    </div>
     <nav>
       <ul className="nav-links">
         <Link to="/home">
@@ -26,15 +30,16 @@ const Navbar = ({ user, setUser }) => {
           <LocalBarIcon />
           Search
         </Link>
-        <Link to="/favourites">
+        <Link className="fav-container" to="/favourites">
           <PersonIcon />
           Favourites
         </Link>
-        <button onClick={() => logout()}>
+        <button className="exit-button" onClick={() => logout()}>
           <ExitToAppIcon />
         </button>
       </ul>
     </nav>
+    </div>
   );
 };
 

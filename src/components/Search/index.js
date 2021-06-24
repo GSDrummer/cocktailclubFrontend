@@ -73,9 +73,11 @@ const Search = ({ user, setUser }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </label>
-        <button type="submit">Search</button>
       </form>
       <CocktailList loading={loading} cocktails={cocktails} />
+      <footer className="footer">&copy;2020
+                  <p>Josh Howcroft, Luke Ellwood</p>
+        </footer>
     </main>
   );
 };
