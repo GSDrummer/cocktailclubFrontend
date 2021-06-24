@@ -12,10 +12,9 @@ const Navbar = ({ user, setUser }) => {
   };
 
   return (
-    <div>
+    <div className='nav-container'>
     <div className='home-header'>
       <h1>Cocktail Club</h1>
-      <h3>The online Speakeasy</h3>
     </div>
     <nav>
       <ul className="nav-links">
@@ -31,7 +30,7 @@ const Navbar = ({ user, setUser }) => {
           <LocalBarIcon />
           Search
         </Link>
-        <Link to="/favourites">
+        <Link className="fav-container" to="/favourites">
           <PersonIcon />
           Favourites
         </Link>

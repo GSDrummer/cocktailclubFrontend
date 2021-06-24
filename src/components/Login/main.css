@@ -6,10 +6,8 @@
     overflow-x: hidden;
     overflow-y: hidden;
     align-items: left;
-    padding: 1vh;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin:2vh;
 }
 .user-text{
     font-weight: 400;

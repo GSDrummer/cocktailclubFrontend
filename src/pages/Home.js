@@ -59,7 +59,13 @@ const Home = ({ user, setUser }) => {
     getDrinks();
   }, []);
 
-  return <CocktailList loading={loading} cocktails={cocktails} />;
-};
+  return (
+    <div><CocktailList loading={loading} cocktails={cocktails} />
+    <footer className="footer">&copy;2020
+                  <p>Josh Howcroft, Luke Ellwood</p>
+        </footer>     
+  </div>)
+    
+  };
 
 export default Home;

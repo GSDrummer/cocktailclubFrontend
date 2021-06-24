@@ -75,6 +75,9 @@ const Search = ({ user, setUser }) => {
         </label>
       </form>
       <CocktailList loading={loading} cocktails={cocktails} />
+      <footer className="footer">&copy;2020
+                  <p>Josh Howcroft, Luke Ellwood</p>
+        </footer>
     </main>
   );
 };
