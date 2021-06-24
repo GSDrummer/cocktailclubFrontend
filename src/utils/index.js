@@ -1,5 +1,5 @@
 export const signUp = async (username, email, password, setUser) => {
-  const response = await fetch(`${process.env.REACT_APP_DB}/users`, {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
