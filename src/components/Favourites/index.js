@@ -45,42 +45,48 @@ const Favourites = ({ user, setUser }) => {
   };
 
   return (
-    <article className="cocktail">
-      <h1>{user.username} Here are your favourite Cocktails!</h1>
-      <div className="img-container">
-        <Card className={classes.root}>
-          <CardHeader
-            action={<IconButton aria-label="settings"></IconButton>}
-            title={user.favourites[0].name}
-          />
-          <CardMedia
-            className={classes.media}
-            image={user.favourites[0].image}
-            title={user.favourites[0].name}
-          />
-          <CardActions disableSpacing>
-            <IconButton
-              className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
-              })}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent>
-              <Typography paragraph>{user.favourites[0].recipe}</Typography>
-              <Typography paragraph>{user.favourites[0].info}</Typography>
-              <Typography paragraph>{user.favourites[0].glass}</Typography>
-            </CardContent>
-          </Collapse>
-        </Card>
-      </div>
-    </article>
+    <>
+      {user.favourites.length === 0 ? (
+        <h1>You have no favourites!</h1>
+      ) : (
+        <article className="cocktail">
+          <h1>{user.username} Here are your favourite Cocktails!</h1>
+
+          <div className="img-container">
+            <Card className={classes.root}>
+              <CardHeader
+                action={<IconButton aria-label="settings"></IconButton>}
+                title={user.favourites[0].name}
+              />
+              <CardMedia
+                className={classes.media}
+                image={user.favourites[0].image}
+                title={user.favourites[0].name}
+              />
+              <CardActions disableSpacing>
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded,
+                  })}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography paragraph>{user.favourites[0].recipe}</Typography>
+                  <Typography paragraph>{user.favourites[0].info}</Typography>
+                  <Typography paragraph>{user.favourites[0].glass}</Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </div>
+        </article>
+      )}
+    </>
   );
 };
-
 export default Favourites;
