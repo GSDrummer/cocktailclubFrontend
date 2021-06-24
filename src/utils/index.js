@@ -43,7 +43,7 @@ export const updateUser = async (username, email, password, setUser) => {
 };
 
 export const addFavourite = async (username, favourites, setUser) => {
-  const response = await fetch("http://localhost:5000/users", {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
