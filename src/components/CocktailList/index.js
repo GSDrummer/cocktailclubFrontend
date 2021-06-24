@@ -21,9 +21,6 @@ export default function CocktailList({ cocktails, loading }) {
         })}
       </div>
     </section>
-    <footer className="footer">&copy;2020
-    <p>Josh Howcroft, Luke Ellwood</p>
-</footer>
 </div>
   );
 }
