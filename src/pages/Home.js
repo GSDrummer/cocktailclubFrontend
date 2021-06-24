@@ -3,8 +3,10 @@ import CocktailList from "../components/CocktailList";
 import "../pages/main.css";
 
 const Home = ({ user, setUser }) => {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(randomCharacter);
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const Home = ({ user, setUser }) => {
     async function getDrinks() {
       try {
         const response = await fetch(
-          `www.thecocktaildb.com/api/json/v1/1/random.php`
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
         );
         const data = await response.json();
         const { drinks } = data;
@@ -30,6 +32,8 @@ const Home = ({ user, setUser }) => {
               strGlass,
             } = item;
             return {
+              user,
+              setUser,
               id: idDrink,
               name: strDrink,
               image: strDrinkThumb,
@@ -55,7 +59,7 @@ const Home = ({ user, setUser }) => {
     getDrinks();
   }, []);
 
-  return <CocktailList cocktails={cocktails} />;
+  return <CocktailList loading={loading} cocktails={cocktails} />;
 };
 
 export default Home;

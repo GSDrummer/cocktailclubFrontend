@@ -7,7 +7,7 @@ import Search from "./components/Search";
 import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Signup";
-import Profile from "./components/Profile";
+import Favourites from "./components/Favourites";
 import Cocktail from "./components/Cocktail";
 
 const App = () => {
@@ -49,9 +49,9 @@ const App = () => {
           <Redirect to="/" />
         )}
         {user ? (
-          <Route path="/profile">
+          <Route path="/favourites">
             <Navbar user={user} setUser={setUser} />
-            <Profile user={user} setUser={setUser} />
+            <Favourites user={user} setUser={setUser} />
           </Route>
         ) : (
           <Redirect to="/" />
