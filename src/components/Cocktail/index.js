@@ -50,6 +50,7 @@ const Cocktail = ({ user, setUser, image, name, id, info, glass, recipe }) => {
   };
 
   const handleFavourites = (e) => {
+    console.log(username);
     e.preventDefault();
     addFavourite(username, favourites, setUser);
   };
