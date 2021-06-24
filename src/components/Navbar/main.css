@@ -1,14 +1,20 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  text-align: center;
   align-items:center;
-  min-height: 15vh;
+  align-content: center;
+  min-height: 20vh;
   background: #141214;
   color: rgb(248, 246, 246);
   text-decoration: none;
 }
-.head-image {
+.home-header {
+  background-color:#141214;
+  color: #e8e9f3;
   display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border: none;
 
 }
 
@@ -17,13 +23,22 @@ h3 {
 }
 
 .nav-links {
-  width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  align-content: center;
   list-style: none;
   color: rgb(248, 248, 248);
+  border: none;
+  
   text-decoration: none;
+}
+
+.exit-button {
+  background: none;
+  padding: 2vw;
+  color: #e8e9f3;
+  border: none;
 }
 
 a:visited {

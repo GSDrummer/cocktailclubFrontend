@@ -73,7 +73,6 @@ const Search = ({ user, setUser }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
         </label>
-        <button type="submit">Search</button>
       </form>
       <CocktailList loading={loading} cocktails={cocktails} />
     </main>

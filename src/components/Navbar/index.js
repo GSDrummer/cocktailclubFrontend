@@ -12,6 +12,11 @@ const Navbar = ({ user, setUser }) => {
   };
 
   return (
+    <div>
+    <div className='home-header'>
+      <h1>Cocktail Club</h1>
+      <h3>The online Speakeasy</h3>
+    </div>
     <nav>
       <ul className="nav-links">
         <Link to="/home">
@@ -30,11 +35,12 @@ const Navbar = ({ user, setUser }) => {
           <PersonIcon />
           Favourites
         </Link>
-        <button onClick={() => logout()}>
+        <button className="exit-button" onClick={() => logout()}>
           <ExitToAppIcon />
         </button>
       </ul>
     </nav>
+    </div>
   );
 };
 

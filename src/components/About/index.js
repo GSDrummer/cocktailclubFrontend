@@ -8,9 +8,7 @@ const About = () => {
       <section className="aboutSection">
         <h1 className="title">About Cocktail Club App</h1>
         <p className="text">
-          Well! it's just a simple reactJS website which uses CocktailDB api 
-          under the hood and let's you serach for your favorite cocktail on here
-          you can find the details of all the cocktails and all there ingredients.
+          This Cocktail App was built using React, Material Ui, MongoDb and Express. 
         </p>
        
        <h2>About Or cocktail Recipes</h2>
@@ -26,12 +24,10 @@ const About = () => {
       </p>
         
         <footer className="footer">&copy;2020
-                <p>Josh Howcroft, Luck E, Craig Peake, Heather McGovern</p>
+                <p>Josh Howcroft, Luke Ellwood</p>
            <link>
              <a href="https://github.com/GSDrummer">Luke E GitHub Profile</a>
              <a href="https://github.com/javajoshcmd">Josh Howcroft GitHub Profile</a>
-             <a href="https://github.com/craigpeake">Graig Peake GitHub Profile</a>
-             <a href="https://github.com/Hev83">Heather McGovern GitHub Profile</a>
           </link>
       </footer>     
      </section>
