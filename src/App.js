@@ -11,7 +11,7 @@ import Favourites from "./components/Favourites";
 import Cocktail from "./components/Cocktail";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
 
   return (
     <div className="App">
