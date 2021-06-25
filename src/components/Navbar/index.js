@@ -39,6 +39,7 @@ const Navbar = ({ user, setUser }) => {
         </button>
       </ul>
     </nav>
+    <h3 className='sub-head'>The virtual Speakeasy</h3>
     </div>
   );
 };

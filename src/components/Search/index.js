@@ -62,7 +62,9 @@ const Search = ({ user, setUser }) => {
   };
 
   return (
-    <main className="home-container">
+    <div>
+    <div>
+    <main className="search-container">
       <form onSubmit={handleSubmit}>
         <label>
           Search for a Cocktail:
@@ -75,10 +77,16 @@ const Search = ({ user, setUser }) => {
         </label>
       </form>
       <CocktailList loading={loading} cocktails={cocktails} />
-      <footer className="footer">&copy;2020
-                  <p>Josh Howcroft, Luke Ellwood</p>
-        </footer>
+     
     </main>
+    </div>
+    <div>
+    <footer className="footer">&copy;2020
+     <p>Josh Howcroft, Luke Ellwood</p>
+</footer>
+    </div>
+     
+</div>
   );
 };
 
