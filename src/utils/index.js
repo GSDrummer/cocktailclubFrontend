@@ -1,5 +1,5 @@
 export const signUp = async (username, email, password, setUser) => {
-  const response = await fetch("http://localhost:5000/users/signup", {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -13,7 +13,7 @@ export const signUp = async (username, email, password, setUser) => {
 };
 
 export const userLogin = async (username, password, setUser) => {
-  const response = await fetch("http://localhost:5000/users/login", {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -26,7 +26,7 @@ export const userLogin = async (username, password, setUser) => {
 };
 
 export const updateUser = async (username, email, password, setUser) => {
-  const response = await fetch("http://localhost:5000/users", {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -43,7 +43,7 @@ export const updateUser = async (username, email, password, setUser) => {
 };
 
 export const addFavourite = async (username, favourites, setUser) => {
-  const response = await fetch("http://localhost:5000/users", {
+  const response = await fetch(`${process.env.REACT_APP_DB}/users`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
