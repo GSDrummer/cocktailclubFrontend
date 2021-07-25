@@ -17,7 +17,10 @@ import { addFavourite } from "../../utils";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1000,
-    margin: '5vw'
+    margin: '5vw',
+    backgroundColor: 'black',
+    color: 'white'
+
   },
   media: {
     height: 0,
@@ -26,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
+    backgroundColor: 'black',
+    color: 'white',
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
