@@ -3,6 +3,7 @@ import CocktailList from "../CocktailList";
 import "./main.css";
 
 const Search = ({ user, setUser }) => {
+  // useState hooks
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
@@ -66,8 +67,8 @@ const Search = ({ user, setUser }) => {
     <div>
     <main className="search-container">
       <form onSubmit={handleSubmit}>
-        <label>
-          Search for a Cocktail:
+        <label className='search-text'>
+          Search for a Cocktail: 
           <input
             type="text"
             name="search"
@@ -80,11 +81,7 @@ const Search = ({ user, setUser }) => {
      
     </main>
     </div>
-    <div>
-    <footer className="footer">&copy;2020
-     <p>Josh Howcroft, Luke Ellwood</p>
-</footer>
-    </div>
+    
      
 </div>
   );

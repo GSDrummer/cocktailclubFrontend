@@ -43,7 +43,7 @@ const App = () => {
           <Route path="/cocktails">
             <Navbar user={user} setUser={setUser} />
             <Search user={user} setUser={setUser} />
-            {/* <Cocktail user={user} setUser={setUser} /> */}
+            <Cocktail user={user} setUser={setUser} />
           </Route>
         ) : (
           <Redirect to="/" />
@@ -60,6 +60,11 @@ const App = () => {
           <Register user={user} setUser={setUser} component={Register} />
         </Route>
       </BrowserRouter>
+      <div>
+    <footer className="footer">&copy;2020
+     <p>Josh Howcroft, Luke Ellwood</p>
+     </footer>
+    </div>
     </div>
   );
 };

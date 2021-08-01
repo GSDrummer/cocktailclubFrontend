@@ -2,4 +2,8 @@
     margin-top: 10vh;
     text-align: center;
     align-items: center;
+    color: white;
+}
+.search-text{
+    margin: 1vw;
 }

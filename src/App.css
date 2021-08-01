@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  background-color: black;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.footer {
+  margin-top: 5vh;
+  color: white;
 }
 
 

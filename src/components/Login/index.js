@@ -27,7 +27,6 @@ const Login = ({ user, setUser }) => {
   return (
     <div className="login-container">
       <h1>Cocktail Club</h1>
-      <h1 className="login-title">Log In</h1>
       <form onSubmit={onSubmit} className="login-form">
         <div className="username-container">
           <label className="user-text" htmlFor="username">Username:  </label>

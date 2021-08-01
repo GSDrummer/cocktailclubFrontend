@@ -1,8 +1,9 @@
 .login-container {
     background-color: #141414;
-    background-image: url(https://images.unsplash.com/photo-1597241693839-07d7fb803af1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80);
+    background: url(https://images.unsplash.com/photo-1597241693839-07d7fb803af1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80);
+    background-size: 100% 100%;
     min-height: 100vh;
-    min-width: auto;
+    background-repeat: no-repeat;
     overflow-x: hidden;
     overflow-y: hidden;
     align-items: left;
@@ -17,6 +18,7 @@
     background: none;
     border: none;
     margin: 2vh;
+    margin-top: 15vh;
     color: white;
     border-radius: 20px;
     text-align: start;
