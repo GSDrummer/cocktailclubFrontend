@@ -15,7 +15,11 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 1000,
+    margin: '5vw',
+    backgroundColor: '#141414',
+    color: 'white'
+
   },
   media: {
     height: 0,
@@ -24,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
+    backgroundColor: '#252525',
+    color: 'white',
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
@@ -33,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500],
+  },
+  FavoriteIcon: {
+    backgroundColor: 'white',
   },
 }));
 
