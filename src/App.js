@@ -60,6 +60,11 @@ const App = () => {
           <Register user={user} setUser={setUser} component={Register} />
         </Route>
       </BrowserRouter>
+      <div>
+    <footer className="footer">&copy;2020
+     <p>Josh Howcroft, Luke Ellwood</p>
+     </footer>
+    </div>
     </div>
   );
 };

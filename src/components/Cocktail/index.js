@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1000,
     margin: '5vw',
-    backgroundColor: 'black',
+    backgroundColor: '#141414',
     color: 'white'
 
   },
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
-    backgroundColor: 'black',
+    backgroundColor: '#252525',
     color: 'white',
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: red[500],
+  },
+  FavoriteIcon: {
+    backgroundColor: 'white',
   },
 }));
 
@@ -70,7 +73,7 @@ const Cocktail = ({ user, setUser, image, name, id, info, glass, recipe }) => {
           <CardMedia className={classes.media} image={image} title={name} />
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-              <FavoriteIcon onClick={handleFavourites} />
+              <FavoriteIcon color="secondary" onClick={handleFavourites} />
             </IconButton>
             <IconButton
               className={clsx(classes.expand, {

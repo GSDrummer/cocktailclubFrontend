@@ -10,6 +10,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.footer {
+  margin-top: 5vh;
+  color: white;
+}
 
 
 

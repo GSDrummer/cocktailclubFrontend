@@ -81,11 +81,7 @@ const Search = ({ user, setUser }) => {
      
     </main>
     </div>
-    <div>
-    <footer className="footer">&copy;2020
-     <p>Josh Howcroft, Luke Ellwood</p>
-</footer>
-    </div>
+    
      
 </div>
   );
