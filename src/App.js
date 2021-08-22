@@ -9,9 +9,27 @@ import Login from "./components/Login";
 import Register from "./components/Signup";
 import Favourites from "./components/Favourites";
 import Cocktail from "./components/Cocktail";
+import { useMediaQuery } from 'react-responsive';
 
 const App = () => {
   const [user, setUser] = useState();
+  const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 992 })
+    return isDesktop ? children : null
+  }
+  const Tablet = ({ children }) => {
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+    return isTablet ? children : null
+  }
+  const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 767 })
+    return isMobile ? children : null
+  }
+  const Default = ({ children }) => {
+    const isNotMobile = useMediaQuery({ minWidth: 768 })
+    return isNotMobile ? children : null
+  }
+
 
   return (
     <div className="App">
@@ -61,7 +79,7 @@ const App = () => {
         </Route>
       </BrowserRouter>
       <div>
-    <footer className="footer">&copy;2020
+    <footer className="footer">&copy;2021
      <p>Josh Howcroft, Luke Ellwood</p>
      </footer>
     </div>

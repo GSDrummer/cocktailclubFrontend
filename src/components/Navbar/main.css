@@ -8,6 +8,7 @@
   align-content: center;
   color: rgb(255, 255, 255);
   min-height: 80vh;
+  min-width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

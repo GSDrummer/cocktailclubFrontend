@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CocktailList from "../components/CocktailList";
+import Carousel from "../components/Carousel/Carousel";
 import "../pages/main.css";
+
 
 const Home = ({ user, setUser }) => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -41,8 +43,11 @@ const Home = ({ user, setUser }) => {
               glass: strGlass,
               recipe: [
                 strIngredient1,
+                " ",
                 strIngredient2,
+                " ",
                 strIngredient3,
+                " ",
                 strIngredient4,
               ],
             };
@@ -62,7 +67,12 @@ const Home = ({ user, setUser }) => {
   return (
 
     <div>
-      <h2>Discover new Cocktails</h2>
+      <div className='sub-head'>
+        <h2 >Having one drink? Make it a good one </h2>
+        <p>Browse, search, and learn how to create hundreds of delicious cocktails.</p>
+        </div>
+      
+
       <CocktailList loading={loading} cocktails={cocktails} />   
   </div>)
     
